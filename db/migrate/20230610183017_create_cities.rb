@@ -4,7 +4,6 @@ class CreateCities < ActiveRecord::Migration[7.0]
       t.string :name, null: false
       t.float :longitude, null: false
       t.float :latitude, null: false
-      t.text :weather
 
       t.timestamps
     end
