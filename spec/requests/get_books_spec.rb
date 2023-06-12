@@ -7,9 +7,9 @@ RSpec.describe 'books requests', type: :request do
 
       get '/api/v1/book-search?location=denver,co&quantity=5'
 
+      binding.pry
       expect(response.status).to eq(200)
       data = JSON.parse(response.body, symbolize_names: true)
-      binding.pry
     end
   end
 end

@@ -9,8 +9,8 @@ class BooksService
     Faraday.new(url: 'https://openlibrary.org')
   end
 
-  def self.search_books(city, quantity)
-    get_url("/dev/docs/api/search?location=#{city}&quantity=#{quantity}")
+  def self.search_books(city)
+    get_url("/search.json?location=#{city}")
   end
 end
 
