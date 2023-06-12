@@ -36,8 +36,6 @@ class Forecast < ApplicationRecord
                   }
       end
     end
-    forecast = Forecast.new(current_weather: current, daily_weather: daily, hourly_weather: hourly)
-    forecast.save
-    forecast
+    Forecast.new(current_weather: current, daily_weather: daily, hourly_weather: hourly)
   end
 end

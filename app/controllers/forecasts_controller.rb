@@ -6,7 +6,6 @@ class ForecastsController < ApplicationController
     City.new_city(params, coordinates)
     forecast_data = ForecastService.city_forecast(coordinates[:lat], coordinates[:lng])
     @forecast = Forecast.new_forecast(forecast_data)
-    binding.pry
     render json: ForecastSerializer.new(@forecast)
   end
 end

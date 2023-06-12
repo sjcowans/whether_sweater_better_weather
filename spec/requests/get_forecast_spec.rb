@@ -9,8 +9,7 @@ RSpec.describe 'forecast requests', type: :request do
 
       expect(response.status).to eq(200)
       data = JSON.parse(response.body, symbolize_names: true)
-      
-      expect(data[:data][:id]).to eq(Forecast.last.id.to_s)
+      expect(data[:data][:id]).to eq(nil)
       expect(data[:data][:type]).to eq"forecast"
       expect(data[:data][:attributes][:current_weather][:last_updated]).to be_a(String)
       expect(data[:data][:attributes][:current_weather][:tempurature]).to be_a(Float)
