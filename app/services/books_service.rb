@@ -10,7 +10,7 @@ class BooksService
   end
 
   def self.search_books(city)
-    get_url("/search.json?location=#{city}")
+    get_url("/search.json?q=#{city}")
   end
 end
 

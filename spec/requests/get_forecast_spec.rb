@@ -12,7 +12,7 @@ RSpec.describe 'forecast requests', type: :request do
       expect(data[:data][:id]).to eq(nil)
       expect(data[:data][:type]).to eq"forecast"
       expect(data[:data][:attributes][:current_weather][:last_updated]).to be_a(String)
-      expect(data[:data][:attributes][:current_weather][:tempurature]).to be_a(Float)
+      expect(data[:data][:attributes][:current_weather][:temperature]).to be_a(Float)
       expect(data[:data][:attributes][:current_weather][:feels_like]).to be_a(Float)
       expect(data[:data][:attributes][:current_weather][:humidity]).to be_an(Integer)
       expect(data[:data][:attributes][:current_weather][:uvi]).to be_a(Float)
@@ -34,7 +34,7 @@ RSpec.describe 'forecast requests', type: :request do
       expect(data[:data][:attributes][:hourly_weather].length).to eq(120)
       data[:data][:attributes][:hourly_weather].each do |hour|
         expect(hour[:time]).to be_a(String)
-        expect(hour[:tempurature]).to be_an(Float)
+        expect(hour[:temperature]).to be_an(Float)
         expect(hour[:conditions]).to be_a(String)
         expect(hour[:icon]).to be_a(String)
       end

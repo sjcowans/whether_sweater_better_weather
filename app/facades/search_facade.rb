@@ -1,7 +1,6 @@
 class SearchFacade
   def initialize(params)
     @city = params[:location]
-    @quantity = params[:quantity]
   end
 
   def city_search
@@ -10,6 +9,6 @@ class SearchFacade
   end
 
   def books_search
-    BooksService.search_books(@city, @quantity)
+    BooksService.search_books(@city)
   end
 end
