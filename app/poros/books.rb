@@ -10,8 +10,8 @@ class Books
 
   def format_forecast(forecast)
     {
-      summary: forecast[:current_weather][:condition],
-      temperature: forecast[:current_weather][:temperature]
+      summary: forecast.current_weather[:condition],
+      temperature: forecast.current_weather[:temperature]
     }
   end
 

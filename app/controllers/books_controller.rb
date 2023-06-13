@@ -5,7 +5,7 @@ class BooksController < ApplicationController
     all_books = search.books_search
     coordinates = search.city_search
     weather = ForecastService.city_forecast(coordinates[:lat], coordinates[:lng])
-    forecast = Forecast.new_forecast(weather)
+    forecast = Forecast.new(weather)
     render json: { data: {
                           "id": "null",
                           "type": "books",
