@@ -60,4 +60,6 @@ group :test do
   gem 'pry'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'vcr'
+  gem 'webmock'
 end

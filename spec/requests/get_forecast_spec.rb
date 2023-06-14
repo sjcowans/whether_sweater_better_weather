@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe 'forecast requests', type: :request do
   describe 'get forecast' do
-    it 'can get forecast for a city' do
+    it 'can get forecast for a city', :vcr do
 
       get '/api/v0/forecast?location=cincinatti,oh'
 
@@ -40,7 +40,7 @@ RSpec.describe 'forecast requests', type: :request do
       end
     end
 
-    it 'checks for correct city' do
+    it 'checks for correct city', :vcr do
       get '/api/v0/forecast?location='
 
       expect(response.status).to eq(422)

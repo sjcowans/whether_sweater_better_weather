@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'post roadtrip request', :type => :request do
-  describe "post roadtrip request" do
-    it "can make a roatrip" do
+  describe "post roadtrip request", :vcr do
+    it "can make a roatrip", :Vcr do
       @user = User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
       trip_data ={
                     "origin": "Cincinatti,OH",
@@ -30,7 +30,7 @@ RSpec.describe 'post roadtrip request', :type => :request do
       expect(json[:data][:attributes][:weather_at_eta][:condition]).to be_a(String)
     end
 
-    it "checks api key" do
+    it "checks api key", :Vcr do
       @user = User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
       trip_data ={
                     "origin": "Cincinatti,OH",
@@ -47,7 +47,7 @@ RSpec.describe 'post roadtrip request', :type => :request do
       expect(json[:errors][0][:detail]).to eq("Error: Invalid API key")
     end
 
-    it 'will give improper location errors' do
+    it 'will give improper location errors', :Vcr do
       @user = User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
       trip_data ={
                     "origin": "",
@@ -78,7 +78,7 @@ RSpec.describe 'post roadtrip request', :type => :request do
       expect(json[:errors][0][:detail]).to eq("Error: Invalid destination or location")
     end
 
-    it 'can give impossible route' do
+    it 'can give impossible route', :Vcr do
       @user = User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
       trip_data ={
                     "origin": "New York, NY",

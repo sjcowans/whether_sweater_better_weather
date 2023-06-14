@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/forecast.json?alerts=no&aqi=no&days=1&dt=2023-21-08&hour=08&key=e569c643674a4887be4201359231006&q=30,30
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Jun 2023 13:18:46 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Server:
+      - BunnyCDN-IL1-894
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Cache-Control:
+      - public, max-age=180
+      Cdn-Proxyver:
+      - '1.03'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 06/14/2023 13:18:46
+      Cdn-Edgestorageid:
+      - '940'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - 45ec06d1e42538ea0605b58a703d6020
+      Cdn-Cache:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"location":{"name":"`Izbat As Safih","region":"Al Jizah","country":"Egypt","lat":30.0,"lon":30.0,"tz_id":"Africa/Cairo","localtime_epoch":1686748726,"localtime":"2023-06-14
+        16:18"},"current":{"last_updated_epoch":1686748500,"last_updated":"2023-06-14
+        16:15","temp_c":30.0,"temp_f":86.0,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":16.3,"wind_kph":26.3,"wind_degree":354,"wind_dir":"N","pressure_mb":1011.0,"pressure_in":29.84,"precip_mm":0.0,"precip_in":0.0,"humidity":37,"cloud":0,"feelslike_c":29.8,"feelslike_f":85.6,"vis_km":10.0,"vis_miles":6.0,"uv":8.0,"gust_mph":18.8,"gust_kph":30.2},"forecast":{"forecastday":[{"date":"2023-06-14","date_epoch":1686700800,"day":{"maxtemp_c":32.3,"maxtemp_f":90.1,"mintemp_c":19.4,"mintemp_f":66.9,"avgtemp_c":24.7,"avgtemp_f":76.4,"maxwind_mph":16.3,"maxwind_kph":26.3,"totalprecip_mm":0.0,"totalprecip_in":0.0,"totalsnow_cm":0.0,"avgvis_km":10.0,"avgvis_miles":6.0,"avghumidity":63.0,"daily_will_it_rain":0,"daily_chance_of_rain":0,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"uv":6.0},"astro":{"sunrise":"05:00
+        AM","sunset":"07:06 PM","moonrise":"02:09 AM","moonset":"03:41 PM","moon_phase":"Waning
+        Crescent","moon_illumination":"18","is_moon_up":0,"is_sun_up":0},"hour":[{"time_epoch":1686718800,"time":"2023-06-14
+        08:00","temp_c":22.9,"temp_f":73.2,"is_day":1,"condition":{"text":"Sunny","icon":"//cdn.weatherapi.com/weather/64x64/day/113.png","code":1000},"wind_mph":5.8,"wind_kph":9.4,"wind_degree":350,"wind_dir":"N","pressure_mb":1012.0,"pressure_in":29.87,"precip_mm":0.0,"precip_in":0.0,"humidity":69,"cloud":11,"feelslike_c":24.9,"feelslike_f":76.8,"windchill_c":22.9,"windchill_f":73.2,"heatindex_c":24.9,"heatindex_f":76.8,"dewpoint_c":16.9,"dewpoint_f":62.4,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":7.4,"gust_kph":11.9,"uv":6.0}]}]}}'
+  recorded_at: Wed, 14 Jun 2023 13:18:46 GMT
+recorded_with: VCR 6.1.0

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'users post request', :type => :request do
   describe "create user request" do
-    it "can make a user" do
+    it "can make a user", :Vcr do
       user_data = {
                     "email": "whatever@example.com",
                     "password": "password",
@@ -21,7 +21,7 @@ RSpec.describe 'users post request', :type => :request do
       expect(json[:data][:attributes][:api_key]).to be_a(String)
     end
 
-    it "checks for unique email" do
+    it "checks for unique email", :Vcr do
       User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password")
       user_data = {
                     "email": "whatever@example.com",
@@ -38,7 +38,7 @@ RSpec.describe 'users post request', :type => :request do
       expect(json[:errors][0][:detail]).to eq("Error: Email has already been taken")
     end
 
-    it 'check for presense of fields' do
+    it 'check for presense of fields', :Vcr do
       user_data = {
                     "email": "",
                     "password": "",
@@ -53,7 +53,7 @@ RSpec.describe 'users post request', :type => :request do
       expect(json[:errors][0][:detail]).to eq("Error: Email can't be blank, Password can't be blank, Password can't be blank")
     end
 
-    it 'checks matching passwords' do
+    it 'checks matching passwords', :Vcr do
       user_data = {
                      "email": "hello@email.com",
                      "password": "123",

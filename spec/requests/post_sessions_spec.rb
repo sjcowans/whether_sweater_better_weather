@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'sessions post request', :type => :request do
   describe "create session request" do
-    it "can log a user in" do
+    it "can log a user in", :Vcr do
       @user = User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password")
       @user.generate_api_key
       login_data ={
@@ -24,7 +24,7 @@ RSpec.describe 'sessions post request', :type => :request do
       expect(json[:data][:attributes][:api_key]).to eq(@user.api_key)
     end
 
-    it 'provides nonspecific error for incorrect email' do
+    it 'provides nonspecific error for incorrect email', :Vcr do
       @user = User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password")
       @user.generate_api_key
       login_data ={
@@ -40,7 +40,7 @@ RSpec.describe 'sessions post request', :type => :request do
       expect(json[:errors][0][:detail]).to eq("Error: Invalid email or password.")
     end
 
-    it 'provides nonspecific error for incorrect password' do
+    it 'provides nonspecific error for incorrect password', :Vcr do
       @user = User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password")
       @user.generate_api_key
       login_data ={
