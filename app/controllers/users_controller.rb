@@ -7,7 +7,7 @@ class UsersController < ApplicationController
                       data: {
                               "id": @user.id,
                               "type": "users",
-                              "attributes": @user
+                              "attributes": {email: @user.email, api_key: @user.api_key}
                             }
                   }, status: 201
     else
