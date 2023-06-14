@@ -39,5 +39,14 @@ RSpec.describe 'forecast requests', type: :request do
         expect(hour[:icon]).to be_a(String)
       end
     end
+
+    it 'checks for correct city' do
+      get '/api/v0/forecast?location='
+
+      expect(response.status).to eq(422)
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(json[:errors].length).to eq(1)
+      expect(json[:errors][0][:detail]).to eq("Error: No coordinates for city found")
+    end
   end
 end

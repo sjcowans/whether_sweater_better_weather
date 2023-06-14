@@ -18,6 +18,6 @@ class User < ApplicationRecord
   def downcase_email
     return if email.nil?
 
-    self.email =email.downcase
+    self.email = email.downcase
   end
 end

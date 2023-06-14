@@ -10,7 +10,11 @@ class SearchFacade
       city = @city
     end
     coordinates = MapquestService.city_coordinates(city)
-    coordinates[:results][0][:locations][0][:latLng]
+    if coordinates[:results][0][:locations][0]
+      coordinates[:results][0][:locations][0][:latLng]
+    else 
+      false
+    end
   end
 
   def books_search
@@ -19,9 +23,17 @@ class SearchFacade
 
   def road_trip
     travel_time = MapquestService.travel_time(@origin, @destination)
-    travel_time = Time.parse(travel_time[:route][:formattedTime])
-    adjusted_time = travel_time + convert_time(@origin, @destination)
-    { travel_time: travel_time.strftime("%H:%M:%S"), adjusted_time: adjusted_time.strftime("%H:%M:%S") }
+    if travel_time[:route][:routeError]
+      if travel_time[:route][:routeError][:errorCode] == 2
+        "impossible"
+      else
+        false
+      end      
+    else
+      travel_time = Time.parse(travel_time[:route][:formattedTime])
+      adjusted_time = travel_time + convert_time(@origin, @destination)
+      { travel_time: travel_time.strftime("%H:%M:%S"), adjusted_time: adjusted_time.strftime("%H:%M:%S") }
+    end
   end
 
   def convert_time(origin, destination)
