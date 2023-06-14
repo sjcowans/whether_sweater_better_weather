@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Jun 2023 12:03:43 GMT
+      - Wed, 14 Jun 2023 14:05:10 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -29,17 +29,17 @@ http_interactions:
       X-Ratelimit-Limit-2628000:
       - '15000'
       X-Ratelimit-Remaining-2628000:
-      - '14514'
+      - '14495'
       Ratelimit-Limit:
       - '15000'
       Ratelimit-Remaining:
-      - '14514'
+      - '14495'
       Ratelimit-Reset:
-      - '431777'
+      - '424490'
       X-Powered-By:
       - MapQuest
       X-Request-Id:
-      - 822df780-0aab-11ee-9b6e-d5a2bf3ba13e
+      - 798ce3f0-0abc-11ee-8626-cb63d0934b92
       Access-Control-Allow-Origin:
       - "*"
       Etag:
@@ -48,7 +48,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MjExLCJtZXNzYWdlIjoiIn19LCJpbmZvIjp7InN0YXR1c2NvZGUiOjYxMSwiY29weXJpZ2h0Ijp7InRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsImltYWdlQWx0VGV4dCI6IsKpIDIwMjIgTWFwUXVlc3QsIEluYy4ifSwibWVzc2FnZXMiOlsiQXQgbGVhc3QgdHdvIGxvY2F0aW9ucyBtdXN0IGJlIHByb3ZpZGVkLiJdfX0=
-  recorded_at: Wed, 14 Jun 2023 12:03:43 GMT
+  recorded_at: Wed, 14 Jun 2023 14:05:10 GMT
 - request:
     method: get
     uri: http://www.mapquestapi.com/directions/v2/route?from=Chicago,IL&key=opVLdTAs9j76FG2wKU4eYS4RsPI4TPgB&to=
@@ -68,7 +68,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Jun 2023 12:03:43 GMT
+      - Wed, 14 Jun 2023 14:05:10 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -78,17 +78,17 @@ http_interactions:
       X-Ratelimit-Limit-2628000:
       - '15000'
       X-Ratelimit-Remaining-2628000:
-      - '14516'
+      - '14494'
       Ratelimit-Limit:
       - '15000'
       Ratelimit-Remaining:
-      - '14516'
+      - '14494'
       Ratelimit-Reset:
-      - '431777'
+      - '424490'
       X-Powered-By:
       - MapQuest
       X-Request-Id:
-      - 824269e0-0aab-11ee-9b6e-d5a2bf3ba13e
+      - 79a30400-0abc-11ee-9c04-555b55946e27
       Access-Control-Allow-Origin:
       - "*"
       Etag:
@@ -97,5 +97,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MjExLCJtZXNzYWdlIjoiIn19LCJpbmZvIjp7InN0YXR1c2NvZGUiOjYxMSwiY29weXJpZ2h0Ijp7InRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsImltYWdlQWx0VGV4dCI6IsKpIDIwMjIgTWFwUXVlc3QsIEluYy4ifSwibWVzc2FnZXMiOlsiQXQgbGVhc3QgdHdvIGxvY2F0aW9ucyBtdXN0IGJlIHByb3ZpZGVkLiJdfX0=
-  recorded_at: Wed, 14 Jun 2023 12:03:43 GMT
+  recorded_at: Wed, 14 Jun 2023 14:05:10 GMT
 recorded_with: VCR 6.1.0

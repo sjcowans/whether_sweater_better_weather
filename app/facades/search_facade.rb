@@ -30,9 +30,9 @@ class SearchFacade
         false
       end      
     else
-      travel_time = Time.parse(travel_time[:route][:formattedTime])
-      adjusted_time = travel_time + convert_time(@origin, @destination)
-      { travel_time: travel_time.strftime("%H:%M:%S"), adjusted_time: adjusted_time.strftime("%H:%M:%S") }
+      travel_time = travel_time[:route][:time]
+      arrival_time = Time.now + travel_time.to_i
+      {travel_time: arrival_time + convert_time(@origin, @destination)}
     end
   end
 
