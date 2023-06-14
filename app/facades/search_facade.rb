@@ -1,14 +1,34 @@
 class SearchFacade
   def initialize(params)
     @city = params[:location]
+    @origin = params[:origin]
+    @destination = params[:destination]
   end
 
-  def city_search
-    coordinates = CoordinateService.city_coordinates(@city)
+  def city_search(city = nil)
+    if city == nil
+      city = @city
+    end
+    coordinates = MapquestService.city_coordinates(city)
     coordinates[:results][0][:locations][0][:latLng]
   end
 
   def books_search
     BooksService.search_books(@city)
+  end
+
+  def road_trip
+    travel_time = MapquestService.travel_time(@origin, @destination)
+    travel_time = Time.parse(travel_time[:route][:formattedTime])
+    adjusted_time = travel_time + convert_time(@origin, @destination)
+    { travel_time: travel_time.strftime("%H:%M:%S"), adjusted_time: adjusted_time.strftime("%H:%M:%S") }
+  end
+
+  def convert_time(origin, destination)
+    origin_coords = MapquestService.city_coordinates(origin)[:results][0][:locations][0][:latLng]
+    destination_coords = MapquestService.city_coordinates(destination)[:results][0][:locations][0][:latLng]
+    origin_time = Timezone.lookup(origin_coords[:lat], origin_coords[:lng])
+    destination_time = Timezone.lookup(destination_coords[:lat], destination_coords[:lng])
+    destination_time.utc_to_local(Time.now) - origin_time.utc_to_local(Time.now)
   end
 end

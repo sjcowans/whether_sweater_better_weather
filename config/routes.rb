@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get '/api/v1/book-search', to: 'books#index'
   post '/api/v0/users', to: 'users#create'
   post '/api/v0/sessions', to: 'sessions#create'
+  post '/api/v0/road_trip', to: 'road_trips#create'
 end

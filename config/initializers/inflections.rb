@@ -14,3 +14,7 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym "RESTful"
 # end
+
+Timezone::Lookup.config(:google) do |c|
+  c.api_key = 'AIzaSyA1lnF9tPt3qmaG4C_OR4uIw7tuCrtrUd4'
+end
